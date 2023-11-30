@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Calculator Web App</title>
+   	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Simple Calculator</h1>
+
+    <form action="calculator" method="post">
+        <div class="form-group">
+            <label for="number1">Number 1:</label>
+            <input type="number" class="form-control" id="number1" name="number1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="number2">Number 2:</label>
+            <input type="number" class="form-control" id="number2" name="number2" required>
+        </div>
+
+        <div class="form-group">
+            <label for="operation">Operation:</label>
+            <select class="form-control" id="operation" name="operation" required>
+                <option value="addition">Addition (+)</option>
+                <option value="subtraction">Subtraction (-)</option>
+                <option value="multiplication">Multiplication (*)</option>
+                <option value="division">Division (/)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
