@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +29,13 @@ public class LoginServlet extends HttpServlet {
 
 			if (rs.next()) {
 				// Authentication successful
+				String userName = rs.getString("name");
+
+				System.out.println(userName + "=========== here I am ===========");
+				// Set user name in session
+				jakarta.servlet.http.HttpSession session = req.getSession();
+				session.setAttribute("userName", userName);
+
 				conn.close();
 				res.sendRedirect("welcome.jsp");
 			} else {

@@ -25,6 +25,7 @@ public class RegistrationServer extends HttpServlet {
 			pstmt.setString(2, email);
 			pstmt.setString(3, password);
 			
+			
 			pstmt.executeUpdate();
 			
 			conn.close();
