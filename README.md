@@ -4,6 +4,6 @@
 
 **Betselot Kidane**
 
-**Sectiom 1**
+**Section 1**
 
 **ID: UGR/8473/13**
