@@ -19,6 +19,7 @@ public class TaskServlet extends HttpServlet {
 		String taskId = request.getParameter("id");
 		String username = request.getParameter("username");
 		String opr = request.getParameter("opr");
+		int userId = Integer.parseInt(request.getParameter("userId"));
 
 		if (opr.equals("edit")) {
 			response.sendRedirect("getTaskById?id=" + taskId + "&opr=" + opr);
@@ -31,7 +32,7 @@ public class TaskServlet extends HttpServlet {
 
 				pstmt.executeUpdate();
 
-				response.sendRedirect("dashboard?username=" + username);
+				response.sendRedirect("dashboard?userId=" + userId);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -47,11 +48,11 @@ public class TaskServlet extends HttpServlet {
 		String description = request.getParameter("description");
 		String dueDate = request.getParameter("dueDate");
 		String priority = request.getParameter("priority");
-		String username = request.getParameter("username");	
+		String username = request.getParameter("username");
 		int userId = Integer.parseInt(request.getParameter("userId"));
-		
-		System.out.println("======userid===========  "+userId);
-		
+
+		System.out.println("======userid===========  " + userId);
+
 		try {
 			Connection conn = DBManager.getConnection();
 			String query = "INSERT INTO tasks (task_title, description, due_date, priority, userId) VALUES (?, ?, ?, ?, ?)";
